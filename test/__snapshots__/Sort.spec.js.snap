@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Sort it generate snapshot test 1`] = `
+"<div class=\\"sort\\"><select>
+    <option disabled=\\"disabled\\" value=\\"0\\">Sort by ID</option>
+    <option value=\\"1\\">Ascending</option>
+    <option value=\\"2\\">Decending</option>
+  </select></div>"
+`;

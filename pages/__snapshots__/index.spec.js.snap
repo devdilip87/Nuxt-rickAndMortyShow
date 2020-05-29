@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Index it generate snapshot test 1`] = `
+"<div class=\\"box content\\">
+  <app-selected-filter-stub></app-selected-filter-stub>
+  <section class=\\"row searchSort\\">
+    <app-search-stub></app-search-stub>
+    <app-sort-stub></app-sort-stub>
+  </section>
+  <app-charactor-list-stub></app-charactor-list-stub>
+</div>"
+`;

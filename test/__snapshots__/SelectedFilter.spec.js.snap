@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SelectedFilter view component test case generate snapshot testing 1`] = `
+"<section class=\\"row\\">
+  <h3>Selected Filter</h3> <button>Male<span class=\\"close-thik\\"></span></button>
+</section>"
+`;
