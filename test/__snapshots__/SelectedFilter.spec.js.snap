@@ -2,6 +2,8 @@
 
 exports[`SelectedFilter view component test case generate snapshot testing 1`] = `
 "<section class=\\"row\\">
-  <h3>Selected Filter</h3> <button>Male<span class=\\"close-thik\\"></span></button>
+  <div class=\\"heading-icon\\"><i class=\\"fal fa-ballot-check\\"></i>
+    <h3>Selected Filter</h3>
+  </div> <button class=\\"gender\\">Male<span class=\\"close-thik\\"></span></button>
 </section>"
 `;

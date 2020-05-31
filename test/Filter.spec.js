@@ -10,7 +10,8 @@ describe("Filter view component test case", () => {
         wrapper = shallowMount(Filter, {
             data: () => {
                 return {
-                    selectedFilterOptions: []
+                    selectedFilterOptions: [],
+                    clsFilter: ['species', 'gender', 'origin']
                 };
             },
             mocks: {
@@ -27,9 +28,14 @@ describe("Filter view component test case", () => {
         expect(wrapper.isVueInstance).toBeTruthy()
     })
 
-    test("check `selectedFilterOptions` on watch", () => {
+    test("to check `selectedFilterOptions` on watch", () => {
         wrapper.vm.selectedFilterOptions.push({type: 2, value: 'Male'});
         expect(wrapper.vm.selectedFilterOptions.length).toStrictEqual(1);
+    })
+
+    test("to check `showFilter` method on filter toggole", () => {
+        const filter = wrapper.find('.heading-icon').trigger('click');
+        expect(wrapper.vm.showFilter.called).toBe(true)
     })
 })
 

@@ -1,5 +1,6 @@
 <template>
     <div class="search">
+    <i class="fa fa-search"></i>
         <input type="text" placeholder="Search by Name" v-model="name"/>
         <!--<button @click="onSearch">Search</button>-->
     </div>
@@ -27,4 +28,5 @@ import SelectedFilterVue from './SelectedFilter.vue';
 </script>
 
 <style>
+    
 </style>

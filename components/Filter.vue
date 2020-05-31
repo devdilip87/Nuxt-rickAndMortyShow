@@ -1,9 +1,9 @@
 <template>
     <div class="box filters">
-        <h3 class="filter-desktop">Filter</h3>
-        <div class="filter-toggle" @click="showFilter"><i class="far fa-filter"></i></div>
+        <div class="heading-icon" @click="showFilter"><i class="far fa-filter"></i><h3 class="filter-desktop">Filter</h3></div>
+        <!--<div class="filter-toggle" @click="showFilter"><i class="far fa-filter"></i></div>-->
         <div class="filter-panel">
-        <div class="filter" v-for="(filter, index) in filters" v-bind:key="index">
+        <div class="filter" v-bind:class="clsFilter[flIndex]" v-for="(filter, flIndex) in filters" v-bind:key="flIndex">
             <h4>{{filter.name}}</h4>
             <div class="checkbox"
               v-for="(species, index) in filter.value"
@@ -11,7 +11,7 @@
               v-model="selectedFilterOptions"
               :value="species"
               /> {{ species.value }}
-              <span class="checkmark"></span></label></div>
+              <span class="checkmark" v-bind:class="clsCheckmark[flIndex]"></span></label></div>
         </div>
         </div>
     </div>
@@ -30,8 +30,9 @@ export default {
   
   data () {
     return {
-      isActive: true,
-      selectedFilterOptions: []
+      selectedFilterOptions: [],
+      clsFilter: ['species', 'gender', 'origin'],
+      clsCheckmark: ['species-checkmark', 'gender-checkmark', 'origin-checkmark']
     }
   },
   computed: {
@@ -52,7 +53,6 @@ export default {
 
   methods: {
     showFilter: function(e) {
-      //this.isActive = !this.isActive
       var panel = e.currentTarget.nextElementSibling;
       if (panel.style.maxHeight) {
         panel.style.maxHeight = null;
@@ -93,16 +93,16 @@ export default {
     left: 0;
     height: 20px;
     width: 20px;
-    background-color: #eee;
+    background-color: #ccc;
   }
 
   /* On mouse-over, add a grey background color */
   .label-container:hover input ~ .checkmark {
-    background-color: #ccc;
+    background-color: #fff;
   }
 
   /* When the checkbox is checked, add a blue background */
-  .label-container input:checked ~ .checkmark {
+  /*.label-container input:checked ~ .checkmark {
     background-color: #2196F3;
   }
 
@@ -140,6 +140,7 @@ export default {
     display: inline-block;
     float: right;
     font-size: 20px;
+    color: #f44336;
   }
 
   .filters button {
@@ -156,6 +157,33 @@ export default {
     overflow: hidden;
     transition: max-height 0.2s ease-out;
     clear: both;
+  }
+
+  .label-container input:checked ~ .species-checkmark {
+    background-color: #2196F3;
+  }
+
+  .label-container input:checked ~ .gender-checkmark {
+    background-color: #4CAF50;
+  }
+
+  .label-container input:checked ~ .origin-checkmark {
+    background-color: #d1c130;
+  }
+
+  .species {
+    background-color: #e1edf773;
+    border-left: 6px solid #2196F3;
+  }
+
+  .gender {
+    background-color: #eefbee91;
+    border-left: 6px solid #4CAF50;
+  }
+
+  .origin {
+    background-color: #cdc25c26;
+    border-left: 6px solid #d1c130;
   }
 
   @media(min-width: 700px) {
