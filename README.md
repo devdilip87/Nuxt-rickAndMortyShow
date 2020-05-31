@@ -1,6 +1,8 @@
 # rickAndMortyShow
 
-> Characters of Rick and Morty Show
+> A simple universal app develop in Vue js and Nuxt js(SSR). App name is 'Rick and Morty Show' which shows list of characters with fallowing feature:
+1) Responsive app with mobile first approach.
+2) Having some filters, sort and search.
 
 ## Build Setup
 
