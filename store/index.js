@@ -12,10 +12,7 @@ const createStore = () => {
             searchedName: '',
             sortBy: 0,
             filters: filter,
-            selectedFilterOptions: [],
-            selectedSpecies: [],
-            selectedGender: [],
-            selectedOrigin: []
+            selectedFilterOptions: []
         },
         getters: {  
             characters: state => {

@@ -59,7 +59,7 @@ export default {
 
     }
     .details-row {
-        border-bottom: 1px solid #000;
+        border-bottom: 1px solid #555;
         color: #000;
         padding-top: 15px;
         margin-left: 5px;

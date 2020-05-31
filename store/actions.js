@@ -2,16 +2,13 @@ import { getFilteredList } from "./../utils";
 
 const nameSearch = ({ commit }, payload) => {
     commit('SET_SEARCHED_NAME', payload.name);
-    let selectedFilter = payload.selectedFilter;
-    
-    commit('SET_FILTERED_LIST', getFilteredList(payload.list, selectedFilter, payload.name));
+    commit('SET_FILTERED_LIST', getFilteredList(payload.list, payload.selectedFilter, payload.name));
 };
 
 
 const sortList = ({ commit }, payload) => {
-    debugger;
     let list = [];
-    if (payload.sortOption > 1) {
+    if (payload.sortOption) {
         list = payload.list.sort(function(a, b) {
             return b.id - a.id;
         });
@@ -20,6 +17,7 @@ const sortList = ({ commit }, payload) => {
             return a.id - b.id;
         });
     }
+    commit('SET_SORT_BY', payload.sortOption);
     commit('SET_FILTERED_LIST', list);
 };
 
