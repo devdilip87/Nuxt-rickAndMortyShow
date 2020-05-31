@@ -7,11 +7,11 @@ import { filterType } from "./../assets/data/filterData";
  * @returns { Array } - return list of final filtered characters
  */
 export const getFilteredList = (list, filters, name) => {
-    if(!filters.length && name === '' ) {
+    if(filters && !filters.length && name === '' ) {
         return list;
     }
     let filteredList = [], speciesList = [], genderList = [], originList = [], finalArray = [];
-    filters.forEach((filter) => {
+    filters && filters.forEach((filter) => {
         let tempList = [];
         list.map((item) => {
             let itemKey = filterType[filter.type -1];
@@ -45,8 +45,10 @@ export const getFilteredList = (list, filters, name) => {
     else if(filteredList.length === 1) {
         finalArray = filteredList[0];
     }
+
+    var itemsArray = Array.from(list);
     
-    let flList = list.filter((item) => {
+    let flList = itemsArray.filter((item) => {
         return finalArray.length ? (item && item.name.indexOf(name) > -1 && finalArray.indexOf(item.id) > -1)
         : (name && item && item.name.indexOf(name) > -1);
     });
